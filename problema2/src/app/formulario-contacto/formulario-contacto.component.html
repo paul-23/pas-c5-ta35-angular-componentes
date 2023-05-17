@@ -1,0 +1,35 @@
+<form (submit)="submitForm()" novalidate>
+  <div class="form-group mb-3">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+    <div *ngIf="nombreInvalido" style="display: flex;" class="invalid-feedback">
+      Introduzca su nombre y apellido
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+    <div *ngIf="emailInvalido" style="display: flex;" class="invalid-feedback">
+      Introduzca un email válido
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="mensaje">Mensaje</label>
+    <textarea class="form-control" id="message" [(ngModel)]="mensaje" name="mensaje" required></textarea>
+    <div *ngIf="mensajeInvalido" style="display: flex;" class="invalid-feedback">
+      Introduzca un mensaje
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="suma">{{ num1 }} + {{ num2 }} = ?</label>
+    <input type="number" class="form-control" id="sum" [(ngModel)]="suma" name="suma" required>
+    <div *ngIf="sumaInvalido" style="display: flex;" class="invalid-feedback">
+      Validación anti-spam incorrecta
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

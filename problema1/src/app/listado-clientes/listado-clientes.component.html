@@ -1,0 +1,22 @@
+<h2>Listado clientes</h2>
+<div *ngIf="!clientes.length">No hay ningún cliente creado.</div>
+<div *ngIf="clientes.length">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">CIF</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Grupo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.cif }}</td>
+        <td>{{ cliente.direccion }}</td>
+        <td>{{ cliente.grupo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
